@@ -2,9 +2,10 @@ import os
 import glob
 import re
 
-# Get a list with the full path
+# Get a list with the full path. Change "directory, '*' + extension" to 
+# "directory, '**', '*' + extension" to search recursively.
 def list_files_with_glob(directory, extension):
-    return glob.glob(os.path.join(directory, '**', '*' + extension), recursive=True)
+    return glob.glob(os.path.join(directory, '*' + extension), recursive=False)
 
 files_directory = 'Z:/Late_blight/ms3/lamp/bright'
 ftype_pat = '*.jpg'
